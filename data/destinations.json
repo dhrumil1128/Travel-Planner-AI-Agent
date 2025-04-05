@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Nice, France",
+        "region": "Europe",
+        "tags": ["beach"],
+        "budget": "low"
+    },
+    {
+        "name": "Interlaken, Switzerland",
+        "region": "Europe",
+        "tags": ["mountain"],
+        "budget": "high"
+    }
+]
