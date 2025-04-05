@@ -66,6 +66,7 @@ travel-planner-ai/
 | Backend     | FastAPI (optional) |
 | Image API   | Unsplash API       |
 | Travel Data | Travel Advisor API (via RapidAPI) |
+| Map Service | Google Maps URL API |
 
 ---
 
@@ -129,7 +130,7 @@ streamlit run Frontend/app.py
 
 ---
 
-## Example Requirements.txt
+## Requirements.txt
 
 ```txt
 streamlit
@@ -155,8 +156,7 @@ textColor="#ffffff"
 
 ## Screenshots
 
-_Add screenshots here once the app is running, showing the UI, destination cards, and itinerary._
-![image](https://github.com/user-attachments/assets/f48780c3-af96-4f66-85aa-61f9ddae712a)
+![image](https://github.com/user-attachments/assets/fa0a9418-65a9-49ae-b513-c1eb43040903)
 
 ---
 
@@ -178,5 +178,7 @@ This project is licensed under the MIT License. You are free to use, modify, and
 
 ## Author
 
-**Dhrumil Pawar**  
-[LinkedIn](https://www.linkedin.com/in/dhrumil-pawar/) 
+**Dhrumil pawar**  
+[LinkedIn](https://www.linkedin.com/in/dhrumil-pawar/)  
+
+
