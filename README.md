@@ -156,6 +156,7 @@ textColor="#ffffff"
 ## Screenshots
 
 _Add screenshots here once the app is running, showing the UI, destination cards, and itinerary._
+![image](https://github.com/user-attachments/assets/f48780c3-af96-4f66-85aa-61f9ddae712a)
 
 ---
 
@@ -177,5 +178,5 @@ This project is licensed under the MIT License. You are free to use, modify, and
 
 ## Author
 
-**Your Name**  
+**Dhrumil Pawar**  
 [LinkedIn](https://www.linkedin.com/in/dhrumil-pawar/) 
