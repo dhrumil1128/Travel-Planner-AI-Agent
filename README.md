@@ -1,6 +1,6 @@
 # Travel Planner AI
 
-Travel Planner AI is a personalized travel recommendation web application built with Streamlit and optionally extensible with FastAPI. It allows users to input their travel preferences such as city, travel style, budget, type of travel, and duration to generate custom destination suggestions, travel itineraries, and visual highlights.
+Travel Planner AI is a personalized travel recommendation web application built with Streamlit and optionally extensible with FastAPI. Users input their travel preferences such as destination, travel style, budget, type of travel, and duration to generate custom destination suggestions. The app leverages the  AI Agent to intelligently refine recommendations and handle follow-up queries. It also includes Unsplash API integration for destination images and Google Maps for location insights. With the addition of real-time travel data from the Travel Advisor API, users can access suggestions for hotels, restaurants, and attractions. The app features a responsive UI, custom CSS styling, and animations. It can be deployed on Streamlit Cloud for easy access.
 
 ---
 
@@ -11,7 +11,7 @@ Travel Planner AI is a personalized travel recommendation web application built 
 - Multiple travel styles (Beaches, Mountains, Nature, City Tours, etc.)
 - Travel types including Solo, Couple, Family, and Friends
 - Budget-friendly options including Budget, Moderate, Luxury, and Premium
-- Auto-generated itinerary based on duration
+- AI Agent handles user input and intelligently provides personalized responses and destination suggestions.
 - Random destination image from Unsplash API
 - Region-specific Google Maps location integration
 - Responsive UI with custom CSS styling and animations
@@ -67,6 +67,8 @@ travel-planner-ai/
 | Image API   | Unsplash API       |
 | Travel Data | Travel Advisor API (via RapidAPI) |
 | Map Service | Google Maps URL API |
+| Chatbot API | Gemin AI  API |
+
 
 ---
 
@@ -89,6 +91,16 @@ Used for fetching destination suggestions and travel data.
   - `/hotels/list`
   - `/restaurants/list`
 - **Authentication:** Requires RapidAPI key in headers
+
+### Gemini API
+- **Base URL:**`http://geminai-agent.local (this is an example; replace with the actual URL if necessary)`
+- **Endpoints Used:**
+- `/process_input: Processes the user's travel preferences and queries.`
+- `/get_suggestions: Retrieves personalized destination suggestions based on the processed input.`
+- `/follow_up: Handles user follow-up queries and refines suggestions.`
+- **Authentication:** Typically requires API key in the headers or authorization token for access.
+
+
 
 ---
 
@@ -130,7 +142,7 @@ streamlit run Frontend/app.py
 
 ---
 
-## Requirements.txt
+## Example Requirements.txt
 
 ```txt
 streamlit
@@ -155,8 +167,12 @@ textColor="#ffffff"
 ---
 
 ## Screenshots
+## 1. Destination Finder 
+![image](https://github.com/user-attachments/assets/6fc246eb-5b1d-4846-8a5c-9643cd87e3ad)
+## 1. AI Travel Chat
+![image](https://github.com/user-attachments/assets/0a242d74-4143-45f3-987d-f381d86e5304)
 
-![image](https://github.com/user-attachments/assets/fa0a9418-65a9-49ae-b513-c1eb43040903)
+
 
 ---
 
@@ -178,7 +194,8 @@ This project is licensed under the MIT License. You are free to use, modify, and
 
 ## Author
 
-**Dhrumil pawar**  
-[LinkedIn](https://www.linkedin.com/in/dhrumil-pawar/)  
+**Dhrumil Pawar**  
+[LinkedIn](https://www.linkedin.com/in/dhrumil-pawar/) 
+
 
 
