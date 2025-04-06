@@ -92,6 +92,7 @@ Used for fetching destination suggestions and travel data.
   - `/restaurants/list`
 - **Authentication:** Requires RapidAPI key in headers
 
+### Gemini API
 - **Base URL:**`http://geminai-agent.local (this is an example; replace with the actual URL if necessary)`
 - **Endpoints Used:**
 - `/process_input: Processes the user's travel preferences and queries.`
