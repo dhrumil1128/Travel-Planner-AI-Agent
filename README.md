@@ -193,8 +193,8 @@ This project is licensed under the MIT License. You are free to use, modify, and
 
 ## Author
 
-**Your Name**  
-[LinkedIn](https://www.linkedin.com/in/your-linkedin/)  
-[GitHub](https://github.com/yourusername)
+**Dhrumil Pawar**  
+[LinkedIn](https://www.linkedin.com/in/dhrumil-pawar/) 
+
 
 
