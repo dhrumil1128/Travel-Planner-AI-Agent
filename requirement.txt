@@ -3,3 +3,6 @@ requests
 fastapi
 uvicorn
 google-generativeai
+python-3.9
+
+
