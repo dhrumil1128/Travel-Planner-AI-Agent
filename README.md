@@ -1,83 +1,54 @@
 Travel Planner AI
-Travel Planner AI is a personalized travel recommendation web application designed to provide users with tailored travel suggestions based on their preferences. The platform is built with Streamlit for the frontend and FastAPI for optional backend extensibility. This app allows users to input their travel preferences such as city, travel style, budget, type of travel, and duration to generate custom destination suggestions, itineraries, and visual highlights.
+Travel Planner AI is a web application built with Streamlit to provide personalized travel recommendations. It enables users to input their travel preferences such as city, travel style, budget, travel type, and duration, which the system then uses to generate custom travel suggestions. The app is also optionally extensible with FastAPI for future backend enhancements.
 
-New Features:
-
-Gemin AI Agent: A core component of the platform that processes user input and provides personalized responses, enabling intelligent and dynamic travel suggestions.
-
-Enhanced Destination Finder: Fetches travel destination data from the Travel Advisor API and uses Unsplash API for destination images.
-
-Google Maps Integration: Links destinations to Google Maps for easy navigation.
-
-Features
+Key Features
 1. Personalized Travel Recommendations
-Input city, travel style, budget, travel type, and duration to receive personalized destination suggestions.
+City-based travel preferences: Users can input a specific city or region to get destination suggestions.
 
-Travel style options such as:
+Multiple travel styles: Choose from Beaches, Mountains, Nature, City Tours, and more.
 
-Beaches
+Travel types: Solo, Couple, Family, and Friends.
+
+Budget Options: Budget, Moderate, Luxury, and Premium options available.
+
+2. Gemin AI Agent
+Gemin AI Agent handles user input and intelligently provides personalized responses and destination suggestions.
+
+It processes travel-related queries and adapts over time, improving the recommendations based on user interaction.
+
+Provides a dynamic conversation flow, allowing users to ask follow-up questions for further details.
+
+3. Destination Finder
+Travel Advisor API is used to fetch destination data based on user preferences.
+
+Suggestions are filtered and presented with essential details such as location, name, and geographical coordinates (latitude/longitude).
+
+Includes links to Google Maps for each suggested destination for easy navigation.
+
+4. Random Destination Images
+Unsplash API is integrated to provide random images for each destination to enhance the user experience visually.
+
+5. Travel Style Selection
+Users can select from various travel styles to tailor their recommendations to their interests:
+
+Nature
 
 Mountains
 
+Beaches
+
 City Tours
 
-Nature Escapes
+And more...
 
-Historical Places
+6. Travel Duration
+Duration selection: Users can input start and end dates, which helps in suggesting suitable travel destinations and activities.
 
-2. Travel Preferences
-City Selection: Users can input their preferred city for travel.
+7. Responsive User Interface
+Built with Streamlit, the application features a responsive and user-friendly UI.
 
-Start and End Dates: Select your travel dates.
+The design includes custom CSS styling and animations for a smooth user experience.
 
-Interest & Style: Choose the travel style based on personal preferences.
-
-Budget: Select between Budget, Moderate, Luxury, and Premium budgets.
-
-Travel Type: Choose the type of travel (Solo, Couple, Family, Friends).
-
-3. AI-Powered Travel Assistant (Gemin AI Agent)
-The Gemin AI Agent is integrated to enhance user interaction. The agent processes user input, generates personalized travel suggestions, responds dynamically to follow-up queries, and adapts to user preferences over time.
-
-4. Destination Finder
-Destination Suggestions: Provides tailored recommendations based on the user’s preferences using the Travel Advisor API.
-
-Random Destination Image: Fetches beautiful destination images from Unsplash API.
-
-Google Maps Integration: Each suggested destination has a link to view it on Google Maps for easy navigation.
-
-5. Unsplash Image Integration
-Fetches high-quality, destination-based images to enrich the user experience.
-
-6. Google Maps Integration
-Provides quick links to Google Maps for each destination for convenient access.
-
-7. FastAPI Integration (Optional)
-FastAPI is optionally integrated for the backend to handle complex API requests and ensure future scalability.
-
-8. Fully Deployable
-The app can be easily deployed on Streamlit Cloud and accessed via a public URL.
-
-Gemin AI Agent
-The Gemin AI Agent is the heart of the system that intelligently handles user interactions. It processes user input (city, travel style, etc.) and uses an internal algorithm to generate dynamic and personalized travel suggestions. It also responds to follow-up queries and adapts to user feedback to continuously refine the travel recommendations.
-
-Key Features of Gemin AI Agent:
-Personalization: Adjusts responses based on user preferences.
-
-Dynamic Response Generation: Reacts to queries in real-time, ensuring a conversational and seamless interaction.
-
-State Management: Tracks user inputs and maintains context across interactions.
-
-The Gemin AI Agent makes the travel planning experience intuitive, engaging, and highly personalized.
-
-Technologies Used
-Layer	Technology
-Frontend	Streamlit
-Backend	FastAPI (optional)
-Image API	Unsplash API
-Travel Data	Travel Advisor API (via RapidAPI)
-Map Service	Google Maps URL API
-AI Engine	Gemin AI Agent
 Project Structure
 markdown
 Copy
@@ -112,9 +83,16 @@ travel-planner-ai/
 ├── main.py
 ├── README.md
 └── requirements.txt
+Technologies Used
+Layer	Technology
+Frontend	Streamlit
+Backend	FastAPI (optional)
+Image API	Unsplash API
+Travel Data	Travel Advisor API
+Maps Service	Google Maps URL API
 API Reference
 Unsplash API
-Used for fetching destination-based images dynamically.
+Used to fetch random images for destinations.
 
 Endpoint: https://api.unsplash.com/photos/random
 
@@ -122,78 +100,61 @@ Method: GET
 
 Parameters:
 
-query: Destination or theme keyword (e.g., city, landscape).
+query: Destination or theme keyword (e.g., Paris, Beach)
 
-client_id: Your Unsplash API Access Key.
+client_id: Your Unsplash API Access Key
 
-orientation: landscape (to fetch landscape-oriented images).
+orientation: landscape
 
 Travel Advisor API (via RapidAPI)
-Used for fetching destination data, suggestions, hotels, and restaurants.
+Used to fetch travel destinations and related data.
 
 Base URL: https://travel-advisor.p.rapidapi.com
 
-Endpoints Used:
+Endpoints:
 
-/locations/search: Fetches destination suggestions based on user input.
+/locations/search: For destination suggestions based on user input.
 
-/hotels/list: Returns hotels in the specified destination.
+/hotels/list: To fetch available hotels.
 
-/restaurants/list: Returns restaurant suggestions in the area.
+/restaurants/list: To fetch restaurant recommendations.
 
-Authentication: Requires a RapidAPI key in the request headers.
-
-Google Maps URL API
-Provides quick access links for the destinations on Google Maps.
-
-Base URL: https://www.google.com/maps/search/?api=1&query=
-
-Parameters:
-
-query: The destination or location to search in Google Maps.
+Authentication: Requires RapidAPI Key in headers.
 
 Installation
-Step 1: Clone the Repository
+Step 1: Clone the repository
 bash
 Copy
 Edit
-git clone https://github.com/dhrumil1128/Travel-Planner-AI-Agent.git
-cd Travel-Planner-AI-Agent
-Step 2: Create a Virtual Environment
-(Optional but recommended for managing dependencies.)
-
+git clone https://github.com/yourusername/travel-planner-ai.git
+cd travel-planner-ai
+Step 2: Set up a virtual environment (optional but recommended)
 bash
 Copy
 Edit
 python -m venv env
 source env/bin/activate  # On Windows: env\Scripts\activate
-Step 3: Install Dependencies
-Install the required dependencies using:
-
+Step 3: Install the required dependencies
 bash
 Copy
 Edit
 pip install -r requirements.txt
-Step 4: Run the Application
-Run the app with Streamlit:
-
+Step 4: Run the application
 bash
 Copy
 Edit
 streamlit run Frontend/app.py
-The app will be available at http://localhost:8501 by default.
-
 Deployment
 Deploy on Streamlit Cloud
-Push your repository to GitHub.
+Push the repository to your GitHub account.
 
 Visit Streamlit Cloud.
 
-Sign in with your GitHub account and link the repository.
+Sign in with GitHub and link your repository.
 
-Select the repository and click Deploy.
+Select the repository and deploy it.
 
-Your app will be live on a public URL.
+Your app will be live with a public URL.
 
 Requirements.txt
 txt
@@ -220,16 +181,17 @@ License
 This project is licensed under the MIT License. You are free to use, modify, and distribute this software with attribution.
 
 Acknowledgements
-Unsplash API for providing images.
+Unsplash API for providing travel-related images: Unsplash API
 
-Streamlit for building the UI framework.
+Streamlit for building the web interface: Streamlit
 
-FastAPI for enabling the backend API.
+FastAPI for backend API capabilities: FastAPI
 
-Travel Advisor API for offering travel data.
+Travel Advisor API for fetching travel data: Travel Advisor API
 
-Google Maps for location queries.
+Google Maps for location queries: Google Maps
 
 Author
 Dhrumil Pawar
 LinkedIn
+
