@@ -3,6 +3,12 @@ requests
 fastapi
 uvicorn
 google-generativeai==0.8.4
+google-ai-generativelanguage
+google-api-core
+google-api-python-client
+google-auth
+protobuf
+pydantic
+tqdm
+typing-extensions
 python-3.9
-
-
