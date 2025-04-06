@@ -3,7 +3,7 @@ import requests
 from agent.state import AgentState
 
 # This function finds travel destination suggestions based only on the preferred country or region.
-def find_destinations(state: AgentState) -> AgentState:
+def find_destinations(state: AgentState, api_key: str) -> AgentState:
     # Extract user preferences from state.
     preferences = state.preferences
     preferred_region = preferences.get("preferred_city", "")  # You can rename this key to 'preferred_region' if clearer
@@ -20,8 +20,8 @@ def find_destinations(state: AgentState) -> AgentState:
     # Travel Advisor API endpoint
     url = "https://travel-advisor.p.rapidapi.com/locations/search"
     headers = {
-        "X-RapidAPI-Key": "56531449a5msha6825acbcb0c4d7p183678jsn99ace807947d",  # API key
-        "X-RapidAPI-Host": "travel-advisor.p.rapidapi.com"                         # Host key
+        "X-RapidAPI-Key": api_key,  # Use the passed API key here
+        "X-RapidAPI-Host": "travel-advisor.p.rapidapi.com"  # Host key
     }
 
     # Parameters for the API request
@@ -57,7 +57,7 @@ def find_destinations(state: AgentState) -> AgentState:
             lat = result.get("latitude")
             lon = result.get("longitude")
 
-            # 🔍 Filter strictly by country/region match
+            # Filter strictly by country/region match
             if name and lat and lon and preferred_region.lower() in location.lower():
                 suggestion = {
                     "name": name,
@@ -68,12 +68,12 @@ def find_destinations(state: AgentState) -> AgentState:
                 print(" Added suggestion:", suggestion)
                 suggestions.append(suggestion)
             else:
-                print("Skipping due to region mismatch or missing info")
+                print("or missing info")
 
         # Update the state with the collected destination suggestions
         state.suggested_destinations = suggestions
         if not suggestions:
-            print("No destinations extracted after processing.")
+            print(" No destinations extracted after processing.")
         return state
 
     except Exception as e:
